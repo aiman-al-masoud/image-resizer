@@ -19,12 +19,12 @@
             "url": "link",
             "files": [
                 {
-                    "name": "lists",
-                    "accept": [ "text/csv", ".csv" ]
+                    "name": "photos",
+                    "accept": [ "image/jpeg", ".jpg" ]
                 },
                 {
                     "name": "photos",
-                    "accept": [ "image/jpeg", ".jpg" ]
+                    "accept": [ "image/jpeg", ".jpeg" ]
                 }
             ]
         }
