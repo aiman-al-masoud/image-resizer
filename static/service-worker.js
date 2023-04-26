@@ -34,7 +34,7 @@ self.addEventListener('fetch', event => {
 
             };
             // reader.readAsText(file);
-            // return Response.redirect('/snippet-stored-success', 303);
+            return Response.redirect('/snippet-stored-success', 303);
         })());
     }
 });
