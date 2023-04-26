@@ -6,7 +6,7 @@ if ('serviceWorker' in navigator) {
         .then(function (reg) {
             // console.log("Service worker registered.")
             // confirm('SERVICE WORKER REGISTERE!')
-            document.write('YAY!')
+            document.write('YAY!', reg)
         }).catch(function (err) {
             document.write('NOOOOOOOOOO!', err)
         })
