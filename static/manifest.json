@@ -2,26 +2,18 @@
     "short_name": "ShareComeOn",
     "name": "My Share Target Tessst",
     "share_target": {
-        "action": "target.html",
+        "action": "/post-shared-content",
+        "method": "POST",
+        "enctype": "multipart/form-data",
         "params": {
             "title": "title",
-            "text": "text",
-            "url": "url"
-        },
-        "files": [
-            {
-                "name": "photos",
-                "accept": [ "image/jpeg", ".jpeg" ]
-            },
-            {
-                "name": "photos1",
-                "accept": [ "image/jpeg", ".jpg" ]
-            },
-            {
-                "name": "photos2",
-                "accept": [ "image/*", ".*" ]
-            }
-        ]
+            "files": [
+                {
+                    "name": "photos",
+                    "accept": [ "image/jpeg", "image/*", ".jpg" ]
+                }
+            ]
+        }
     },
     "description": "demooooooo",
     "icons": [
