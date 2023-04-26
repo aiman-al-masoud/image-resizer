@@ -1,21 +1,19 @@
-document.write('serviceWorker' in navigator)
-
-if ('serviceWorker' in navigator) {
-
-    navigator.serviceWorker.register('/static/service-worker.js')
-        .then(function (reg) {
-            // console.log("Service worker registered.")
-            // confirm('SERVICE WORKER REGISTERE!')
-            document.write('YAY!', reg)
-        }).catch(function (err) {
-            document.write('NOOOOOOOOOO!', err)
-        })
+/**
+ * Warn the page must be served over HTTPS
+ * The `beforeinstallprompt` event won't fire if the page is served over HTTP.
+ * Installability requires a service worker with a fetch event handler, and
+ * if the page isn't served over HTTPS, the service worker won't load.
+ */
+if (window.location.protocol === 'http:') {
+    const requireHTTPS = document.getElementById('requireHTTPS');
+    const link = requireHTTPS.querySelector('a');
+    link.href = window.location.href.replace('http://', 'https://');
+    requireHTTPS.classList.remove('hidden');
+    window.location.href = 'https:' + window.location.href.substring(5);
 }
 
-// document.write('SCEMO!')
-// alert('CIAO!')
-
-// var parsedUrl = new URL(window.location.toString());
-// console.log('Title shared: ' + parsedUrl.searchParams.get('name'));
-// console.log('Text shared: ' + parsedUrl.searchParams.get('description'));
-// console.log('URL shared: ' + parsedUrl.searchParams.get('link'));
+/* Only register a service worker if it's supported */
+if ('serviceWorker' in navigator) {
+    console.log('👍', 'navigator.serviceWorker is supported');
+    navigator.serviceWorker.register('/static/service-worker.js');
+}
