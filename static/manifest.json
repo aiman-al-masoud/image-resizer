@@ -11,7 +11,15 @@
         "files": [
             {
                 "name": "photos",
-                "accept": [ "image/*", ".jpg", ".jpeg" ]
+                "accept": [ "image/jpeg", ".jpeg" ]
+            },
+            {
+                "name": "photos1",
+                "accept": [ "image/jpeg", ".jpg" ]
+            },
+            {
+                "name": "photos2",
+                "accept": [ "image/*", ".*" ]
             }
         ]
     },
